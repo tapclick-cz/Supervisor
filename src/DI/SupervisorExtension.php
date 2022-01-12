@@ -46,12 +46,11 @@ final class SupervisorExtension extends CompilerExtension
 		;
 
 		$builder->addDefinition($this->prefix('renderCommand'))
-			->setFactory(RenderCommand::class, [strtr($this->prefix('render'), '.', ':')])
-			->addTag('console.command')
+			->setFactory(RenderCommand::class)
 		;
+
 		$builder->addDefinition($this->prefix('writeCommand'))
-			->setFactory(WriteCommand::class, [strtr($this->prefix('write'), '.', ':')])
-			->addTag('console.command')
+			->setFactory(WriteCommand::class)
 		;
 	}
 
