@@ -15,12 +15,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class WriteCommand extends Command
 {
 
+	protected static $defaultName = 'supervisor:write';
+
 	private \Supervisor\Configuration\Configuration $configuration;
 
 
-	public function __construct(string $name, \Supervisor\Configuration\Configuration $configuration)
+	public function __construct(\Supervisor\Configuration\Configuration $configuration)
 	{
-		parent::__construct($name);
+		parent::__construct();
 		$this->configuration = $configuration;
 	}
 

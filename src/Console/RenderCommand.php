@@ -10,18 +10,19 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class RenderCommand extends Command
 {
 
+	protected static $defaultName = 'supervisor:render';
+
 	private \Supervisor\Configuration\Configuration $configuration;
 
 	private \Indigo\Ini\Renderer $renderer;
 
 
 	public function __construct(
-		string $name,
 		\Supervisor\Configuration\Configuration $configuration,
 		\Indigo\Ini\Renderer $renderer
 	)
 	{
-		parent::__construct($name);
+		parent::__construct();
 		$this->configuration = $configuration;
 		$this->renderer = $renderer;
 	}
